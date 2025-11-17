@@ -2,6 +2,7 @@
 
 namespace App\Domains\Roles\Models;
 
+use App\Domains\Users\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
@@ -10,4 +11,9 @@ class Role extends Model
         'name',
         'description',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

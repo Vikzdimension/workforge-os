@@ -4,7 +4,6 @@ namespace App\Domains\Organizations\Models;
 
 use App\Domains\Users\Models\User;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Organization extends Model
 {
@@ -13,8 +12,8 @@ class Organization extends Model
         'slug',
     ];
 
-    public function users(): HasMany
+    public function users()
     {
-        return $this->hasMany(User::class, 'organization_id');
+        return $this->hasMany(User::class);
     }
 }
