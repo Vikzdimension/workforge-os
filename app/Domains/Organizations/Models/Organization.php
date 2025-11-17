@@ -10,4 +10,9 @@ class Organization extends Model
         'name',
         'slug',
     ];
+
+    public function users(): HasMany
+    {
+        return $this->hasMany(\App\Domains\Users\Models\User::class);
+    }    
 }
